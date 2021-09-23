@@ -4,40 +4,29 @@ import {data} from '../../../data'
 const UseStateArray = ({btnTitle}) => {
 
 
-  const [person, setPerson] = useState(data);
-
-let removeItem =  (id)=>{
-          let NewPeopleList = person.filter((value)=>value.id !==id);
-          setPerson(NewPeopleList);
-
-        }
-return <>
+const [people, setPeople] = useState(data);
+const removeItem = (id)=>{
+let newPeople = people.filter((person)=>{
+  return person.id !== id})
+setPeople(newPeople);
+}
+ 
+return <> 
 {
-person.map((value)=>{
-  const {id, name} = value;
-  return (
-    <div key={id} className="item">
-      <h1> {name} </h1>
-      <button onClick={ ()=> removeItem(id)
-       
-      }> remove </button>
-    </div>
-  )
-})
-} 
-{/* simple gotcha is to just set the whole person array to an empty array which basically clears the whole page */}
-<button onClick={()=>{
-  if(person==data){
-    setPerson([]);
+  people.map((person)=>{
+    const {id, name} =person;
+return(
+  <div key={person.id} className="item"> 
+    <h1> {person.name}</h1>
+    <button className="btn" onClick={()=>{removeItem(id)}}>Remove </button>
+  </div>
+)
 
-  }
-  else{
-    setPerson(data);
 
-  }
-}} className="btn">{btnTitle="Add or remove"}</button>
+  })
+}
+<button className="btn" onClick = {()=>setPeople([])}> Remove all </button>
 </>
-
 
 };
 
