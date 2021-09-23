@@ -6,7 +6,11 @@ const UseStateArray = ({btnTitle}) => {
 
   const [person, setPerson] = useState(data);
 
+let removeItem =  (id)=>{
+          let NewPeopleList = person.filter((value)=>value.id !==id);
+          setPerson(NewPeopleList);
 
+        }
 return <>
 {
 person.map((value)=>{
@@ -14,6 +18,9 @@ person.map((value)=>{
   return (
     <div key={id} className="item">
       <h1> {name} </h1>
+      <button onClick={ ()=> removeItem(id)
+       
+      }> remove </button>
     </div>
   )
 })
