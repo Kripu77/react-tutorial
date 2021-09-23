@@ -1,16 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const ErrorExample = () => {
 
-  const btnClick =()=>{
-    document.getElementById('changing').innerHTML="changed";
-  }
+ const [text, setText] = useState("Hey my name is Kripu");
   return (<div className="container"> 
   
   
 <h1> Click the button to generate new title</h1>
-<h2 id="changing"> Hey</h2>
-<button className="btn" onClick={btnClick}> Click me</button>
+<h2 id="changing"> {text}</h2>
+<button className="btn" > Click me</button>
   
   
   </div>);
