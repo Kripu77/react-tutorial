@@ -10,7 +10,11 @@ const UseStateArray = () => {
 return <>
 {
 person.map((value)=>{
-  console.log(value)
+  return (
+    <div key={value.id} className="item">
+      <h1> {value.name} </h1>
+    </div>
+  )
 })
 }
 
