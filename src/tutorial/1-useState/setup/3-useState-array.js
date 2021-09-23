@@ -1,16 +1,22 @@
 import React,{useState} from 'react';
-import { data } from '../../../data';
+import {data} from '../../../data'
 
 const UseStateArray = () => {
 
 
-  const[people, setPeople] = useState(0)
-return (
+  const [person, setPerson] = useState(data);
 
-  <React.Fragment>
 
-  </React.Fragment>
-)
+return <>
+{
+person.map((value)=>{
+  console.log(value)
+})
+}
+
+</>
+
+
 };
 
 export default UseStateArray;
