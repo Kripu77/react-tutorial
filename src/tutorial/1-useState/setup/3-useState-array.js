@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {data} from '../../../data'
 
-const UseStateArray = () => {
+const UseStateArray = ({btnTitle}) => {
 
 
   const [person, setPerson] = useState(data);
@@ -19,7 +19,16 @@ person.map((value)=>{
 })
 } 
 {/* simple gotcha is to just set the whole person array to an empty array which basically clears the whole page */}
-<button onClick={()=>{setPerson([])}} className="btn">Clear items</button>
+<button onClick={()=>{
+  if(person==data){
+    setPerson([]);
+
+  }
+  else{
+    setPerson(data);
+
+  }
+}} className="btn">{btnTitle="Add or remove"}</button>
 </>
 
 
