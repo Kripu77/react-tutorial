@@ -9,10 +9,11 @@ const removeList =(id)=>{
   let newPeople = people.filter((value)=>{
     return value.id !== id;
   })
-  setPeople(newPeople);
+  setPeople(newPeople); //setting the newpeople to the setPeople method for people
 }
  return <>
  {
+  //  map over each array to print out the valyes
    people.map((value, index)=>{
 const {id, name}= value;
 return (
