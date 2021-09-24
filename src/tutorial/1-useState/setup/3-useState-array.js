@@ -7,7 +7,8 @@ const UseStateArray = ({btnTitle}) => {
 const [people, setPeople] = useState(data);
 const removeItem = (id)=>{
 let newPeople = people.filter((person)=>{
-  return person.id !== id})
+
+return person.id !== id})
 setPeople(newPeople);
 }
  
