@@ -12,7 +12,15 @@ const [person, setPerson] = useState(obj);
 <h1 > {person.name}</h1>
 {/* remember the setMethod is the one only responsible for changing the state of the main value
 Hence, we just use the setperson method and change the contact object and its value inside the person object */}
-<button className="btn" onClick={()=>{setPerson({...person, contact:"Reach me On Facebook"})}}>Change Contact</button>
+<button className="btn" onClick={()=>{
+  if(person.contact==="reach me on instagram"){
+ setPerson({...person, contact:"Reach me On Facebook"})
+  }
+  else{
+    setPerson({...person})
+  }
+  
+ }}>Change Contact</button>
 </>)
 };
 
