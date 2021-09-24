@@ -1,13 +1,13 @@
 import React from 'react';
+import UseStateCounter from './tutorial/1-useState/setup/5-useState-counter';
 
-import UseStateObject from './tutorial/1-useState/setup/4-useState-object';
 
 function App() {
   return (
     <div className='container'>
 
-     <UseStateObject/>
-
+   
+<UseStateCounter/>
     </div>
   )
 }
