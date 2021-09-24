@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import {obj }from "../../../object";
+import {obj} from "../../../object.js"
 const UseStateObject = () => {
-  const [person, setPerson] = useState(obj);
-let changeMessage= ()=>{
-  // remember if you do not use spread operator while working with objects then you will essentially wipe out other data then the ones that is selected using the set method
-  return setPerson({...person, location:"hornsby"});
-}
-  return <> 
-<h1> {person.name}</h1>
-<p> {person.age}</p>
-<p> {person.contact}</p>
-<p> {person.location}</p>
-<button className="btn" onClick={()=>{changeMessage()}}> Change Message</button>
+const [person, setPerson] = useState(obj);
 
- </>;
+ 
+ return (<> 
+ 
+<h1> {person.age}</h1>
+<h1> {person.contact}</h1>
+<h1> {person.location}</h1>
+<h1 > {person.name}</h1>
+{/* remember the setMethod is the one only responsible for changing the state of the main value
+Hence, we just use the setperson method and change the contact object and its value inside the person object */}
+<button className="btn" onClick={()=>{setPerson({...person, contact:"Reach me On Facebook"})}}>Change Contact</button>
+</>)
 };
 
 export default UseStateObject;
