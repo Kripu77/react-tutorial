@@ -3,30 +3,29 @@ import {data} from "../../../data.js";
 
 const UseStateArray = () => {
 
-  const[people, setPeople] = useState(data);
-  const removeList = (id)=>{
-const newPeople = people.filter((value)=>{
-  return value.id !== id;
-})
-setPeople(newPeople)
-  }
-  return <>
-  {
-    people.map((value)=>{
-const {id, name} = value;
-return(
+ const [people, setPeople]= useState(data);
+//  we only want to keep those peoples whose id doesnt match to the button where it is clicked
+const removeList =(id)=>{
+  let newPeople = people.filter((value)=>{
+    return value.id !== id;
+  })
+  setPeople(newPeople);
+}
+ return <>
+ {
+   people.map((value, index)=>{
+const {id, name}= value;
+return (
   <div className="item" key={id}>
-    <h1> {name}</h1>
+    <h4> {name}</h4>
     <button onClick={()=>{removeList(id)}}> remove</button>
+
   </div>
 )
-
-    })
-    
-  }
-  <button className="btn"  onClick={()=>{setPeople([])}}> Rmeove</button>
-  
-  </>
+   })
+ }
+ <button className ="btn" onClick ={()=>{setPeople([])}}> Remove</button>
+ </>
  
 }
 export default UseStateArray;
