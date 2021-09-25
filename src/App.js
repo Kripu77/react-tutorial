@@ -1,5 +1,6 @@
 import React from 'react';
-import UseStateCounter from './tutorial/1-useState/final/5-useState-counter';
+import UseStateObject from './tutorial/1-useState/final/4-useState-object';
+
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className='container'>
 
    
-<UseStateCounter/>
+<UseStateObject/>
     </div>
   )
 }
