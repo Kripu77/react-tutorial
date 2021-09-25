@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const UseStateCounter = () => {
 const[count, setCount] = useState(0);
-
+// setTime is async hence it is taken out from the normal flow
   return(
     <>
     <h1> Welcome to my simple counter</h1>\
