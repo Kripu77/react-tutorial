@@ -5,7 +5,11 @@ import React, { useState  ,useEffect } from 'react'
 // second parameter
 const UseEffectBasics = () => {
   //the way useEffect works is we pass in the call back function, within this call back function what ever we place will run after every render
-  useEffect(()=>{})
+  useEffect(()=>{
+    console.log("call use effect")
+  })
+
+console.log("render component")
   return <>
   
   
