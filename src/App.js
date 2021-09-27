@@ -1,5 +1,5 @@
 import React from 'react';
-import UseStateArray from './tutorial/1-useState/final/3-useState-array';
+import UseStateArray from './tutorial/1-useState/setup/3-useState-array';
 
 
 
