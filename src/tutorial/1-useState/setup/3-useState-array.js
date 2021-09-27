@@ -15,6 +15,7 @@ return <>
 return(
   <div className="item" key={id}> 
   <h1> {name}</h1>
+  {/* the id is just a function invokation, in the actual function we passed x as an argument to show that they are realted but not stricltly */}
   <button onClick={()=>{removeList(id)}}> remove</button>
   
   </div>)
