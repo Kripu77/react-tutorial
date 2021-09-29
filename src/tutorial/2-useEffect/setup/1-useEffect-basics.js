@@ -14,8 +14,9 @@ useEffect(()=>{
   if(value>0){
   document.title =`You have (${value}) new messages`}
 
+  // in any condition where we would not like our useffect to render more than once we pass another argument to the useffect function and leave the array empty which will not have any other dependencies
 
-})
+},[])
 console.log("Hi my name is shyam")
 
 
