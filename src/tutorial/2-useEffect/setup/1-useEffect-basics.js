@@ -9,6 +9,8 @@ const [value, setValue] = useState(0);
 useEffect(()=>{
   console.log("Hello this is me")
   //conditional can be used to check if there are any message unseen
+  //rules of hook doesnot allow you to use hooks inside the conditional but you can place conditional within the hook which will not throw any error
+  
   if(value>0){
   document.title =`You have (${value}) new messages`}
 
