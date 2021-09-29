@@ -4,21 +4,23 @@ import React, { useState  ,useEffect } from 'react'
 // cleanup function
 // second parameter
 const UseEffectBasics = () => {
+//useEffect takes on a call back function and it runs on every render.
 const [value, setValue] = useState(0);
-  //the way this function works is similar to map, filter concept. IT takes a callback fucntion and performs some action on every render
-  useEffect(()=>{
-    // fun fact is consolke.log is also considered as side effect
-    console.log('call useEffect');
-    document.title =` new mnessage (${value})`
-  })
+useEffect(()=>{
+  console.log("Hello this is me")
+  //conditional can be used to check if there are any message unseen
+  if(value>0){
+  document.title =`You have (${value}) new messages`}
 
-  console.log('render component')
-  
-  return(
- <>
- <h1> {value}</h1>
- <button className="btn" onClick={()=>{setValue(value+1)}}> New Button</button>
- </>)
+
+})
+console.log("Hi my name is shyam")
+
+
+return<>
+<h1> {value}</h1>
+<button className="btn" onClick={()=>setValue(value+1)}> CLick me</button>
+ </>
 };
 
 export default UseEffectBasics;
