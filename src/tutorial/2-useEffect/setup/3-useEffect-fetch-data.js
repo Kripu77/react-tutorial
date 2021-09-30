@@ -8,8 +8,10 @@ const UseEffectFetchData = () => {
      console.log(users) //to check the data once the user has been set to new fetch json file after fetch promise is fulfilled
    useEffect(()=>{
      fetch(url)
-     .then((res)=>{ return res.json()})
-     .then((data)=>setUsers(data));
+     .then((res)=>{ return res.json()}) 
+    
+     .then((data)=>setUsers(data)); 
+    //  setting the data obtained to the user information
    
    },[])
 
