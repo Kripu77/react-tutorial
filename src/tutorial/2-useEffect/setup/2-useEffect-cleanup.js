@@ -4,14 +4,18 @@ import React, { useState, useEffect } from 'react';
 // second argument
 
 const UseEffectCleanup = () => {
+  // useState fn
 let [size, setSize] = useState(window.innerWidth);
+// fn which willl set the size 
 const checkSize = ()=>{
   setSize(window.innerWidth);
 }
+// when the screen size is greater than 1000px
  if(size>1000){
     setSize("i'm home");
     document.title="the size is perfect"
   }
+  // when the size is smaller than 1000px
   else{
     document.title="React App"
   }
