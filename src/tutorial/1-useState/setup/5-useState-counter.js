@@ -8,9 +8,7 @@ return(<>
 <h2> Total Count: {count}</h2>
 <button className="btn" onClick={()=>{
   setTimeout(()=>{
-    setCount((prevCount)=> prevCount+1)
-  }, 2000)
-}}> IncreMENT</button>
+    setCount((prevCount)=> prevCount+1)}, 2000)}}> IncreMENT</button>
 <button className="btn" onClick={()=>{
   setTimeout(()=>{
     setCount((prevCount)=> prevCount-1)
