@@ -3,39 +3,40 @@ const url = 'https://api.github.com/users/QuincyLarson';
 const MultipleReturns = () => {
   // conditional rendering means to do or return something if certain condition is met run certain component if block condition meets else run the other block component
 
-  const [isLoading, setIsLoading] = useState(true); //initally true 
-  const[isError, setIsError] =useState(false); //initially false
-  const [users, setUsers] = useState([]);
-
+  const[isLoading, setIsLoading]= useState(true);
+  const[ isError, setIsError] = useState(false);
+  const[users, setUsers] = useState([]);
 
   useEffect(()=>{
-    fetch(url) .then((res)=>{
-      if(res.status>=200 && res.status<299){
-        return res.json();
-      
-      }
-      else{
-        setIsError(true);
-        setIsLoading(false);
-      }
-    }) 
-    .then((data)=>{
-      //to make the process more fancy we can use a set time out function prior to the value  gets to false
-      setUsers(data.login)
-     setTimeout(()=>{setIsLoading(false)}, 2000);
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  },[])
-if(isLoading){
-  return <h1> Is Loading.....</h1>
+    fetch(url) //fetch the data coming from the url
+.then((res)=>{
+if(res.status>=200 && res.status<299){
+  return res.json();
+}
+else{
+  setIsError(true);
+  setIsLoading(false); //setLoading to false in case of EZRRROr
 }
 
+
+})
+.then((data)=>{
+  setUsers(data.login)
+  setIsLoading(false);
+})
+.catch((err)=>{
+  console.log(err)
+  setIsError(true);
+})
+  }, [])
+
+  if(isLoading){
+    return <h1> Loading......</h1>
+  }
 if(isError){
-  return <h1> There is an error please contact adminstrator</h1>
+  return <h1> please check code there is an error</h1>
 }
-return <>{users}</>
+  return <> {users}</>
 }
 
 export default MultipleReturns;
