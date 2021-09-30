@@ -1,6 +1,7 @@
 import React from 'react';
+import UseEffectFetchData from './tutorial/2-useEffect/setup/3-useEffect-fetch-data';
 
-import UseEffectCleanup from './tutorial/2-useEffect/setup/2-useEffect-cleanup';
+
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <div className='container'>
 
    
-<UseEffectCleanup/>
+<UseEffectFetchData/>
     </div>
   )
 }
