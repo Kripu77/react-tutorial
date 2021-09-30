@@ -11,18 +11,29 @@ const UseEffectFetchData = () => {
      .then((res)=>{ return res.json()}) 
     
      .then((data)=>setUsers(data)); 
-    //  setting the data obtained to the user information
+    //  setting the data obtained to the user information with the help of the method
    
-   },[])
+   },[]) //empty array to prevent infinte fetch
 
 
-   return <> {
+   return <><h1> The list of GitHub Users</h1><ul className="users">  {
+    // map over the users array 
 users.map((value)=>{
+  const{id, login, avatar_url, html_url } = value;
+return (<li key={id} className="item">
+  <img src={avatar_url} alt={login}/>
+<div> 
+  <h4> {login}</h4>
+
+<a href = {html_url}> profile </a>
+</div>
+
+</li>)
 
 })
 
 
-   }</>
+   }</ul></>
 
   
 
