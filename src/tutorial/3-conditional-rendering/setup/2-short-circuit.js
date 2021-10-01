@@ -12,10 +12,9 @@ const ShortCircuit = () => {
   <h1> {isError&&"Error....404"}</h1>
   {/* every time we click we toggle the error from its previous state */}
   <button className="btn" onClick={()=>{setIsError(!isError)}}>click me</button>
-  { isError ? <p> there is an error</p> : <div> 
-    <h2> There is no any error you may proceed forward</h2>
-    
-    </div>}
+
+  {/* we use question mark and a semi colon as an ternary operator in which ? takes the if block and return something while the : takes the else block and returns something on the same side */}
+  { isError ? <p> There is an error </p> : <div> <h2>There is no any error</h2></div>}
   
   </>
 };
