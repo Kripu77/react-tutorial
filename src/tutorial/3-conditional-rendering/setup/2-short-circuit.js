@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // short-circuit evaluation
-// ternary operator
+// ternary operator ? 
 
 const ShortCircuit = () => {
   const[text, setText] = useState('');
@@ -12,6 +12,10 @@ const ShortCircuit = () => {
   <h1> {isError&&"Error....404"}</h1>
   {/* every time we click we toggle the error from its previous state */}
   <button className="btn" onClick={()=>{setIsError(!isError)}}>click me</button>
+  { isError ? <p> there is an error</p> : <div> 
+    <h2> There is no any error you may proceed forward</h2>
+    
+    </div>}
   
   </>
 };
