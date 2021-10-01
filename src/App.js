@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ShortCircuit from './tutorial/3-conditional-rendering/setup/2-short-circuit';
+
+import ShowHide from './tutorial/3-conditional-rendering/setup/3-show-hide';
 
 
 
@@ -14,7 +15,7 @@ function App() {
     <div className='container'>
 
    
-<ShortCircuit/>
+<ShowHide/>
     </div>
   )
 }
