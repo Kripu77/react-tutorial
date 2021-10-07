@@ -13,6 +13,11 @@ const handleSubmit = (e)=>{
 e.preventDefault();
 }
 
+//fn to handle change
+const handleChange = (e)=>{
+const value= e.target.value;
+const name=e.target.name;
+}
 
 return <>
 
