@@ -3,6 +3,7 @@ import React from 'react';
 
 
 import ControlledInputs from './tutorial/4-forms/setup/1-controlled-inputs';
+import Test from './tutorial/4-forms/setup/Test';
 
 
 
@@ -16,7 +17,7 @@ function App() {
     <div className='container'>
 
    
-<ControlledInputs/>
+<Test/>
     </div>
   )
 }
