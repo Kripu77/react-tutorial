@@ -6,7 +6,22 @@ import React, { useState } from 'react';
 // value, onChange
 
 const ControlledInputs = () => {
-  return <h1>controlled inputs</h1>;
+ return <>
+ <article>
+<form>
+  <div>
+    <label htmlFor="firstName">Name: </label>
+    <input type="text" id="firstName" name="FirstName"/>
+  </div>
+  <div>
+    <label htmlFor="lastName">Name: </label>
+    <input type="text" id="lastName" name="lastName"/>
+  </div>
+</form>
+
+
+ </article>
+ </>
 };
 
 export default ControlledInputs;
