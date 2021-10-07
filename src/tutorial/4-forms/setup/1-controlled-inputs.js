@@ -16,12 +16,15 @@ const ControlledInputs = () => {
     const handleClick =  (e)=>{
 e.preventDefault();
 if(firstName && lastName && email){
-    const person = {firstName, lastName, email}
+    const person = { id: new Date().getTime().toString(),firstName, lastName, email}
         console.log(person)
-   const allPerson = [...people,person];
-   console.log(allPerson)
-   setPeople(allPerson)
-
+  const allPeople = Array.from(person);
+  setPeople((prevState)=>
+      [...prevState, person]
+  )
+setEmail('');
+setFirstName('');
+setLastName('')
 }
 
     }
@@ -61,8 +64,8 @@ return <>
 
 <div className="form">
     {people.map((value, index)=>{
-        const[firstName, lastName, email] = value;
-        return <div>
+        const{id, firstName, lastName, email} = value;
+        return <div key={id}>
             <h1 style={{color:"black"}}> {firstName}</h1>
 
             </div>
