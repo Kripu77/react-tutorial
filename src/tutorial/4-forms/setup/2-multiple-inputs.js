@@ -7,25 +7,31 @@ import React, { useState } from 'react';
 // dynamic object keys
 
 const ControlledInputs = () => {
- 
+ const[ details, setDetails] = useState([{firstName:""}, {lastName:""} ,{email:""}])
+const [people, setPeople] = useState([])
+const handleSubmit = (e)=>{
+e.preventDefault();
+}
+
+
 return <>
 
 <div className="form">
-<form>
+<form onSubmit={handleSubmit}>
 
 <label htmlFor="fName">
   First Name:
 </label>
 
-<input type="text" id="fName" name="fName" ></input>
+<input type="text" id="fName" name="fName" value={details[0].firstName} onChange={handleChange}></input>
 <br/>
 <br/>
 
-<label htmlFor="LName">
+<label htmlFor="LName" >
   Last Name
 </label>
 
-<input type="text" id="LName" name="LName" ></input>
+<input type="text" id="LName" name="LName" value={details[0].lastName}  onChange={handleChange}></input>
 <br/>
 <br/>
 
@@ -34,7 +40,7 @@ return <>
 Email:
 </label>
 
-<input type="text" id="email" name="email" ></input>
+<input type="text" id="email" name="email" value={details[0].email}  onChange={handleChange}></input>
 <br/>
 <br/>
 <button type="submit"> Add user</button>
