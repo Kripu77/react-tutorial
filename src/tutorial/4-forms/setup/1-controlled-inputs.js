@@ -6,82 +6,43 @@ import React, { useState } from 'react';
 // value, onChange
 
 const ControlledInputs = () => {
-    // store the input value in state
+
+    //store all the inputs that we will take in a state variable
     const[firstName, setFirstName] = useState('');
     const[lastName, setLastName] = useState('');
-    const[email, setEmail] = useState('');
     const[people, setPeople] = useState([]);
- 
-    // prevent default behaviour from happening that is page refresh which submit button is clicked
-    const handleClick =  (e)=>{
-e.preventDefault();
-if(firstName && lastName && email){
-    const person = { id: new Date().getTime().toString(),firstName, lastName, email}
-        console.log(person)
-  const allPeople = Array.from(person);
-  setPeople((prevState)=>
-      [...prevState, person]
-  )
-setEmail('');
-setFirstName('');
-setLastName('')
-}
 
+    //the handleclick function prevents the default behaviour of the button i.e. refresh
+
+    const handleClick =(e)=>{
+        e.preventDefault();
+        //to add mapping fucntionality we first convert the value into an object then an array
+      const person = {firstName, lastName}
+      const allPeople  = [person]
+     
+      //use setmethod to populate people
     }
-
-
-return <>
-<article>
-    {/* using the onsubmit method */}
-    {/* while we pass on a function to check something we just refer to the function rather than invoking it */}
-<form onSubmit={handleClick}>
-<div className="form">
-    <label htmlFor="firstName">
-        First Name
-    </label>
-    {/* once we have the value we need to have the onChange property if not we are only following readonly approach */}
-    <input type="text" name="firstName" id="firstName" value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
-
-<br/>
-<br/>
-
-    <label htmlFor="lastName">
-        Last Name
-    </label>
-    <input type="text" name="lastName" id="lastName" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
-    
-<br/>
-<br/>
-
-    <label htmlFor="email" >
-      Email
-    </label>
-    <input type="text" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+return <article>
+   
+        {/* on the onsubmit method we just provide a reference we donot invoke it */}
+<div className="form" onSubmit={handleClick}>
+     <form >
+    <label htmlFor="firstName">First Name:</label>
+    <input type="text" id="firstName" name="lastName" value={firstName} onChange={(e)=>setFirstName(e.target.value)}></input>
     <br/>
-<button type="submit"> Add user?</button>
-
-</div>
-
-<div className="form">
-    {people.map((value, index)=>{
-        const{id, firstName, lastName, email} = value;
-        return <div key={id}>
-            <h1 style={{color:"black"}}> {firstName}</h1>
-
-            </div>
-
-    })}
-
-</div>
-
-
-
-
+    <br/>
+    <label htmlFor="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" value={lastName} onChange={(e)=>setLastName(e.target.value)}></input>
+    <br></br>
+<button type="submit">submit</button>
 </form>
+</div>
+
+
 
 </article>
 
-</>
+
 };
 
 export default ControlledInputs;
