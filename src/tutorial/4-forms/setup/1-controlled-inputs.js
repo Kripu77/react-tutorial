@@ -19,13 +19,13 @@ const ControlledInputs = () => {
         //to add mapping fucntionality we first convert the value into an object then an array
       //we only want to insert the values when first name and lastname are not empty
       if(firstName&& lastName){
-        const person = {firstName, lastName}
-      const allPeople  = [person]
+        const person = {id: new Date().getTime().toString(), firstName, lastName}
+    
      
       //use setmethod to populate people
       //we donot want to insert empty value hence we do truthy and flasy check using and operator
     
-     setPeople((prevState)=>[...prevState, allPeople])
+     setPeople((prevState)=>[...prevState, person])
       console.log(people)
 
       //once the data is done with insertion we want to reset the feilds to empty or just clear it
@@ -46,7 +46,17 @@ return <article>
 <button type="submit">submit</button>
 </form>
 </div>
+<div className="form">
+    {people.map((value, index)=>{
+        const{id,firstName, lastName}= value;
+        return <div key={index}>
+            <h4>{firstName}</h4>
+            <h3>{lastName}</h3>
 
+        </div>
+    }
+    )}
+</div>
 
 
 </article>
