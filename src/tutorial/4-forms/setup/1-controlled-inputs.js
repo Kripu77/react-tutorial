@@ -7,9 +7,15 @@ import React, { useState } from 'react';
 
 const ControlledInputs = () => {
  
+    // prevent default behaviour from happening that is page refresh
+    const handleClick =  (e)=>{
+e.preventDefault();
+    }
+
+
 return <>
 <article>
-<form>
+<form onSubmit={handleClick}>
 <div className="form">
     <label htmlFor="firstName">
         First Name
@@ -31,10 +37,11 @@ return <>
       Email
     </label>
     <input type="text" name="email" id="email"/>
-
+    <br/>
+<button type="submit"> Add user?</button>
 
 </div>
-<button> Add user?</button>
+
 
 
 
