@@ -23,6 +23,7 @@ const handleChange =(e)=>{
 
     const name = e.target.name;
     const value = e.target.value;
+    //everytime we add some stuff we want to keep track of it hecne use the spread operator to include it
     setList({...list, [name]:value})
 }
 
