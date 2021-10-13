@@ -10,9 +10,8 @@ const [finalDetails, setFinalDetails] = useState([])
         e.preventDefault();
         const {fName, lName, email} = userDetails;
 if(fName && lName &&email){
-    const details = [userDetails]
-    console.log(details);
-    setFinalDetails({...finalDetails, details})
+   setFinalDetails((prevState)=>[...prevState, userDetails])
+   console.log(finalDetails)
         
     }
     }
@@ -55,6 +54,18 @@ setUserDetails({...userDetails, [name]:value})
 
             
         </form>
+        <div>
+            {finalDetails.map((value, index)=>{
+                const {fname, lName, email} = value;
+                return <div key={index}>
+                    <h1> {fname}</h1>
+                    <h2> {lName}</h2>
+                    <h3>The email is {email}</h3>
+
+                    </div>
+
+            })}
+        </div>
                </div>
         </div>
     )
