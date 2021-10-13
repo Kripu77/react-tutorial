@@ -10,7 +10,8 @@ const [finalDetails, setFinalDetails] = useState([])
         e.preventDefault();
         const {fName, lName, email} = userDetails;
 if(fName && lName &&email){
-   setFinalDetails((prevState)=>[...prevState, userDetails])
+    //you can follow botth the functional approach and just spread the prevState value to track the progress
+   setFinalDetails([...finalDetails, userDetails])
    console.log(finalDetails)
         
     }
