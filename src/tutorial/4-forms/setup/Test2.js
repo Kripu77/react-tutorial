@@ -3,21 +3,34 @@ import React,{useState} from 'react'
 const Testt = () => {
     const[userDetails, setUserDetails] = useState({fName:"", lName:"", email:""})
 const [finalDetails, setFinalDetails] = useState([])
+
+
+
     const handleSubmit = (e)=>{
         e.preventDefault();
+        const {fName, lName, email} = userDetails;
+if(fName && lName &&email){
+    const details = [userDetails]
+    console.log(details);
+    setFinalDetails({...finalDetails, details})
+        
     }
+    }
+
+
+
+
+
     //the handle change function
     const handleChange = (e)=>{
 const name =  e.target.name;
 const value=  e.target.value;
 
-const {fName, lName, email} = userDetails;
-if(fName && lName &&email){
-    const details = [userDetails]
-    console.log(details);
+
+setUserDetails({...userDetails, [name]:value})
 }
 
-    }
+    
     return (
         <div>
       
