@@ -12,7 +12,9 @@ const UseRefBasics = () => {
 
  const handleClick = (e)=>{
    e.preventDefault();
-   console.log(inputRef.current.value)
+  //  if we console.log our ref property then we get access to current object from which we can get access to the value that we type on the input feild
+ console.log(inputRef)
+ console.log(inputRef.current.value)
 
  }
  return <>
