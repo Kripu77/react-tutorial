@@ -13,7 +13,7 @@ e.preventDefault();
 // if we console log then we get access to a current property from the ref hook
 console.log(inputRef.current.value)
 console.log(divRef)
-console.log(divRef.current)
+console.log(divRef.current.childNodes[0])
   }
 
   //use effect to check the focus and run only once, hence no need to have any dependency if it will only trigger once
