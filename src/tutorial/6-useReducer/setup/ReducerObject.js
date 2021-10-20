@@ -1,36 +1,37 @@
 import React,{useReducer} from 'react'
 
-//reducer fn
-const reducer = (currentState, action) =>{
+//reducer function
+const reducer = (state, action)=>{
 
-   
-
-    if(action.type === 'increment'){
-        return {firstCount: currentState.firstCount+1}
+//point to remember is that while returning we have to pass on the similar name for the object as we are refrencing the name on our HTML return statement refer to line no 29 for refrence
+    if(action.type==='increment'){
+        return {firstCounter: state.firstCounter+1}
     }
-    else if(action.type === 'decrement'){
-        return {firstCount:currentState.firstCount-1}
+    else if(action.type==='decrement'){
+        return {firstCounter:state.firstCounter-1}
     }
-    else if(action.type ==='reset'){
-        return {firstCount:initialState.firstCount}
+    else{
+        return {
+            firstCounter: initialState.firstCounter
+        }
     }
 
 }
 
-
-//initial state value
 const initialState = {
-    firstCount :0
-};
+    firstCounter : 0
+}
 const ReducerObject = () => {
+
     const [state, dispatch] = useReducer(reducer, initialState)
     return (
         <div>
-            <p></p>
-            <h1> {state.firstCount}</h1>
-            <button onClick={()=>dispatch({type:'increment'})}> Increment</button>
-             <button onClick={()=>dispatch({type:'decrement'})}> decrement</button>
-              <button onClick={()=>dispatch({type:'reset'})}> Reset</button>
+           <h1>{state.firstCounter}</h1> 
+
+           {/* type refers to the action what type its of string */}
+           <button onClick={()=>dispatch({type:'increment'})}>Increment</button>
+           <button onClick={()=>dispatch({type:'decrement'})}>Decrement</button>
+           <button onClick={()=>dispatch({type:'reset'})}>Reset</button>
         </div>
     )
 }
