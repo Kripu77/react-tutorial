@@ -71,7 +71,7 @@ console.log(finalName)
 
  return <>
 
- {state.modalOpen?<Modal/> : ""}
+ {state.modalOpen?<Modal modalContent={state.modalContent}/> : ""}
   <form className='form' onSubmit={handleSubmit}>
 <input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
 <button type='submit'> Submit</button>

@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 
-const Modal = () => {
-  return <div>User Updated</div>;
+const Modal = ({modalContent}) => {
+  return <div>
+<p> 
+  {modalContent}
+</p>
+
+  </div>;
 };
 
 export default Modal;
