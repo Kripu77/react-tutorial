@@ -3,10 +3,20 @@ import Modal from './Modal';
 import { data } from '../../../data';
 // reducer function
 //used when we have a complicated setup
+const reducer = (currentState, action)=>{
+
+}
+const initialState={
+  people:[],
+  modalOpen:false,
+  modalContent:'Hola Hola'
+
+}
 const Index = () => {
 const [ name, setName]= useState('')
-  const[people, setPeople] = useState(data)
-  const[modalOpen, setModalOpen] = useState(false)
+  // const[people, setPeople] = useState(data)
+  // const[modalOpen, setModalOpen] = useState(false)
+  const[state, dispatch] = useReducer(reducer, initialState)
   const[isEditing, setIsEditing] = useState(false)
   const[editId, setEditID] =useState('')
 
