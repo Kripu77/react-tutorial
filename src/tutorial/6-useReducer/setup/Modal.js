@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const Modal = () => {
-  return <div>i'm modal</div>;
+  return <div>User Updated</div>;
 };
 
 export default Modal;
