@@ -2,17 +2,20 @@ import React, {useReducer} from 'react'
 
 
 const reducer= (currentState, action)=>{
-    switch(action){
-        case 'increment':
-            return currentState+1
-            case 'decrement':
-                return currentState-1
-                case 'reset':
-                    return initialState
-                    default:
-                        return currentState
+    if(action==='increment'){
+return currentState+1
     }
-}
+    else if(action==='decrement'){
+        return currentState-1
+    }
+    else if(action==='reset'){
+        return initialState
+    }
+    else{
+        return currentState
+    }
+    }
+
 
 const initialState = 0
 const Reducer = () => {
