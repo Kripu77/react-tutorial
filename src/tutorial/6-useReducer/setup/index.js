@@ -21,7 +21,7 @@ const [ name, setName]= useState('')
   const[editId, setEditID] =useState('')
 
   //prevent default behaviour
-console.log(people)
+
   const handleSubmit = (e)=>{
 e.preventDefault();
 
@@ -29,34 +29,32 @@ e.preventDefault();
 if(name && 'true'){
 const finalName = {id: new Date().getTime().toString(),name:name}
 console.log(finalName)
-setPeople((people)=> [...people, finalName]
-)
-console.log(people)
-setModalOpen(true)
+
+
 
 }
   }
 
   //useEffect to control modal
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setModalOpen(false)
-    }, 3000)
-  },[modalOpen])
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     setModalOpen(false)
+  //   }, 3000)
+  // },[modalOpen])
 
 
 //test update fn
-const updateFn= (id)=>{
+// const updateFn= (id)=>{
 
-  const newList = people.find((people)=>{
-    return people.id === id;
-  })
-  setIsEditing(true)
-  setEditID(id)
-  console.log(newList)
-  setName(newList.name)
-}
+//   const newList = state.people.find((people)=>{
+//     return state.people.id === id;
+//   })
+//   // setIsEditing(true)
+//   // setEditID(id)
+//   // console.log(newList)
+//   // setName(newList.name)
+// }
 
 // if(isEditing===true){
 //   setPeople(people.map((value)=>{
@@ -73,7 +71,7 @@ const updateFn= (id)=>{
 
  return <>
 
- {modalOpen?<Modal/> : ""}
+ {state.modalOpen?<Modal/> : ""}
   <form className='form' onSubmit={handleSubmit}>
 <input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
 <button type='submit'> Submit</button>
@@ -83,12 +81,12 @@ const updateFn= (id)=>{
   <div className='container'>
 
 {
-  people.map((value)=>{
+  state.people.map((value)=>{
 
     const{id, name}= value;
     return <div key={id}> 
 <h1>{name}</h1>
-<button onClick={()=>updateFn(id)}>Update</button>
+{/* <button onClick={()=>updateFn(id)}>Update</button> */}
 
 
     </div>
