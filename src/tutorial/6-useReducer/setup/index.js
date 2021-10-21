@@ -4,8 +4,15 @@ import { data } from '../../../data';
 // reducer function
 //used when we have a complicated setup
 const reducer = (currentState, action)=>{
+ if(action.type==='TESTING'){
+   //remember to copy the previous values of the state
+   return {...currentState, people:data, modalOpen: true, modalContent:'User Created'}
 
-}
+  }
+  if(action.type ==='false'){
+    return{...currentState, people:data, modalOpen:false, modalContent:''}
+  }
+};
 const initialState={
   people:[],
   modalOpen:false,
@@ -27,21 +34,23 @@ e.preventDefault();
 
 
 if(name && 'true'){
+  dispatch({type:'TESTING'})
 const finalName = {id: new Date().getTime().toString(),name:name}
 console.log(finalName)
+
 
 
 
 }
   }
 
-  //useEffect to control modal
+//   //useEffect to control modal
 
-  // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     setModalOpen(false)
-  //   }, 3000)
-  // },[modalOpen])
+//   useEffect(()=>{
+//     setTimeout(()=>{
+// dispatch({type:'false'})
+//     }, 6000)
+//   },[name])
 
 
 //test update fn
@@ -74,7 +83,12 @@ console.log(finalName)
  {state.modalOpen?<Modal modalContent={state.modalContent}/> : ""}
   <form className='form' onSubmit={handleSubmit}>
 <input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
-<button type='submit'> Submit</button>
+<button type='submit' onClick={()=>{ setTimeout(()=>{
+  console.log('This is me being triggered')
+dispatch({type:'false'})
+    }, 6000)
+
+}}> Submit</button>
 
 
   </form>

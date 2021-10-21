@@ -1,4 +1,5 @@
 import React from 'react';
+import Index from './tutorial/6-useReducer/setup/';
 
 
 
@@ -18,8 +19,7 @@ import ReducerObject from './tutorial/6-useReducer/setup/ReducerObject';
 function App() {
   return (
     <div className='container'>
-
-<MultipleReducers/>
+<Index/>
     </div>
   )
 }
