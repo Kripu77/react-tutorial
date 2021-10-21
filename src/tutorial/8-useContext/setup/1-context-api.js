@@ -1,9 +1,20 @@
 import React from 'react'
+import ComponentA from './ComponentA';
+
+
+//create context 
+export const userContext = React.createContext(); 
+export const nameContext = React.createContext();
+
 
 const contextAPI = () => {
   return (
     <div>
-      
+      <userContext.Provider value={"unlogged"}>
+        <nameContext.Provider value={"unknown"}>
+<ComponentA/>
+        </nameContext.Provider>
+      </userContext.Provider>
     </div>
   )
 }
