@@ -1,8 +1,8 @@
 import React, { useState, useReducer, forwardRef, useEffect } from 'react';
 import Modal from './Modal';
-import { data } from '../../../data';
-import { act } from 'react-dom/test-utils';
+
 import {reducer, initialState} from "./reducerFn"
+
 // reducer function
 //used when we have a complicated setup
 
@@ -41,9 +41,11 @@ else{
 
   useEffect(()=>{
     setTimeout(()=>{
+      console.log('me')
 dispatch({type:'false'})
     }, 6000)
-  },[name])
+    console.log('me outside')
+  },[state.modalOpen])
 
 
 //test update fn
@@ -88,7 +90,7 @@ dispatch({type:'false'})
     const{id, name}= value;
     return <div key={id}> 
 <h1>{name}</h1>
-{/* <button onClick={()=>updateFn(id)}>Update</button> */}
+<button onClick={()=>dispatch({type:'remove', payLoad:id})}>Remove</button>
 
 
     </div>
