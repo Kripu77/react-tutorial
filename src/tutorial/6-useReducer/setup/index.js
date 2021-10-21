@@ -1,24 +1,13 @@
 import React, { useState, useReducer, forwardRef, useEffect } from 'react';
 import Modal from './Modal';
 import { data } from '../../../data';
+import { act } from 'react-dom/test-utils';
+import {reducer, initialState} from "./reducerFn"
 // reducer function
 //used when we have a complicated setup
-const reducer = (currentState, action)=>{
- if(action.type==='TESTING'){
-   //remember to copy the previous values of the state
-   return {...currentState, people:data, modalOpen: true, modalContent:'User Created'}
 
-  }
-  if(action.type ==='false'){
-    return{...currentState, people:data, modalOpen:false, modalContent:''}
-  }
-};
-const initialState={
-  people:[],
-  modalOpen:false,
-  modalContent:'Hola Hola'
 
-}
+
 const Index = () => {
 const [ name, setName]= useState('')
   // const[people, setPeople] = useState(data)
@@ -34,23 +23,27 @@ e.preventDefault();
 
 
 if(name && 'true'){
-  dispatch({type:'TESTING'})
-const finalName = {id: new Date().getTime().toString(),name:name}
+  const finalName = {id: new Date().getTime().toString(),name:name}
+  dispatch({type:'TESTING', payLoad:finalName})
+
 console.log(finalName)
 
 
 
 
 }
+else{
+  dispatch({type:'error'})
+}
   }
 
-//   //useEffect to control modal
+  //useEffect to control modal
 
-//   useEffect(()=>{
-//     setTimeout(()=>{
-// dispatch({type:'false'})
-//     }, 6000)
-//   },[name])
+  useEffect(()=>{
+    setTimeout(()=>{
+dispatch({type:'false'})
+    }, 6000)
+  },[name])
 
 
 //test update fn
@@ -83,12 +76,7 @@ console.log(finalName)
  {state.modalOpen?<Modal modalContent={state.modalContent}/> : ""}
   <form className='form' onSubmit={handleSubmit}>
 <input type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
-<button type='submit' onClick={()=>{ setTimeout(()=>{
-  console.log('This is me being triggered')
-dispatch({type:'false'})
-    }, 6000)
-
-}}> Submit</button>
+<button type='submit' > Submit</button>
 
 
   </form>
