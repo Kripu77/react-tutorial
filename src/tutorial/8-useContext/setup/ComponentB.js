@@ -1,17 +1,12 @@
-import React from 'react'
-import { secondContext } from './1-context-api'
+import React,{useContext} from 'react'
+import { userContext, nameContext } from './1-context-api'
 const ComponentB = () => {
+const user = useContext(userContext);
+const name = useContext(nameContext)
+
     return (
         <div>
-            <secondContext.Consumer>
-                {
-                    value=>{
-                        return <div>
-                            <h1> My name is {value}</h1>
-                        </div>
-                    }
-                }
-            </secondContext.Consumer>
+            <h1>{user}, {name}</h1>
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
 
 //create context 
@@ -12,7 +14,7 @@ const contextAPI = () => {
     <div>
       <userContext.Provider value={"unlogged"}>
         <nameContext.Provider value={"unknown"}>
-<ComponentA/>
+<ComponentC/>
         </nameContext.Provider>
       </userContext.Provider>
     </div>

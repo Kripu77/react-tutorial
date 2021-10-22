@@ -1,5 +1,7 @@
-import React from 'react'
+import React,{useContext}from 'react'
 import { userContext, nameContext } from './1-context-api'
+
+//tricky approach
 const ComponentA = () => {
     return (
         <div>
