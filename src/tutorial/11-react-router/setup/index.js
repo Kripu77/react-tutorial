@@ -1,36 +1,39 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react' 
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Error from "./Error"
 import Navbar from "./Navbar"
 import Home from "./Home"
-import About from "./About"
-import People from  "./People"
-import Error from "./Error"
+import People from "./People"
 import Person from "./Person"
+import About from "./About"
 
-const ReactRouterSetup = () => {
+
+const index = () => {
   return (
-    <div>
-      <Router>
-        <Navbar />
+   <main>
+<Router>
+  <Navbar/>
+  <Switch>
+    <Route exact path="/">
+      <Home/>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/people">
-            <People />
-          </Route>
-          <Route path="/:id" children={<Person />}></Route>
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+    </Route>
+    <Route  path="/about">
+      <About/>
+    </Route>
+    <Route path="/people">
+      <People/>
+    </Route>
+    <Route path='/:id' children={<Person/>}></Route>
+    <Route path="*">
+      <Error/>
+    </Route>
+    
+  </Switch>
+</Router>
+
+
+   </main>)
 }
 
-export default ReactRouterSetup
+export default index

@@ -9,8 +9,8 @@ const People = () => {
       {people.map((person) => {
         return (
           <div key={person.id} className='item'>
-            <h4>{person.name}</h4>
-        <Link to={`/${person.id}`}>Learn More</Link>
+            <h4>{person.name}</h4> 
+            <Link to={`${person.id}`}>Learn More</Link>
      
           </div>
         );
