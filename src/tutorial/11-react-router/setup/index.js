@@ -10,7 +10,26 @@ import Person from './Person';
 // navbar
 import Navbar from './Navbar';
 const ReactRouterSetup = () => {
-  return <h2>react router</h2>;
-};
+  return (
+    // 1st setup router and the route with path which will then wrap the component and display the component as the path selected.
+    //when we set the path as * it selects all which introduces another bug so here we use Switch which will provide us the feasibilty to select the 1st component which matches the path
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/person">
+          <Person />
+        </Route>
+        <Route exact="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
+  );};
 
 export default ReactRouterSetup;
