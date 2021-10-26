@@ -7,6 +7,7 @@ import People from "./People"
 import Person from "./Person"
 import About from "./About"
 
+//import all the necessary dependcies from react-router
 
 const index = () => {
   return (
