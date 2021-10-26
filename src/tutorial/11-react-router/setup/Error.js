@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 const Error = () => {
   return (
     <div>
-      <Link to ="/">
-       Back Home
-      </Link>
-      <h1>Error Page</h1>
+     <h1> Error, this page doesnot exist. Click on the button below to go back to home...</h1>
+     <Link to="/">
+     <button className='btn'>Home</button>
+     </Link>
     </div>
   );
 };

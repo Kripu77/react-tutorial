@@ -1,7 +1,6 @@
 import React from 'react';
 // react router
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// pages
+import { BrowserRouter as Router, Route, Switch }from 'react-router-dom';// pages
 import Home from './Home';
 import About from './About';
 import People from './People';
@@ -21,14 +20,13 @@ const ReactRouterSetup = () => {
         <Route exact path="/">
           <Home />
         </Route>
-
-        <Route path="/about">
-          <About />
-        </Route>
         <Route path="/people">
           <People />
         </Route>
-        <Route exact="*">
+        <Route path="/About">
+          <About />
+        </Route>
+        <Route path="*">
           <Error />
         </Route>
       </Switch>
