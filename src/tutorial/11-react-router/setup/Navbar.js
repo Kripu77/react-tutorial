@@ -1,23 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import {Link} from "react-router-dom"
+
 const Navbar = () => {
-  //instead of using traditional link we use the link from react router dom which takes a unique prop called to
   return (
-    <nav>
+    <div>
       <ul>
         <li>
-          <button className="btn">
-            <Link to="/people">People</Link>
-          </button>
+          <Link to="people">
+            <button className="btn">People</button>
+          </Link>
         </li>
         <li>
-          <button className="btn">
-            <Link to="/about">About</Link>
-          </button>
+          <Link to="about">
+            <button className="btn">About</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="person">
+            <button className="btn">People</button>
+          </Link>
         </li>
       </ul>
-    </nav>
+    </div>
   );
-};
+}
 
-export default Navbar;
+export default Navbar
