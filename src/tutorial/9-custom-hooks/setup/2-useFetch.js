@@ -25,7 +25,7 @@ setIsError(true)
   }
   useEffect(()=>{
     getData()
-  },[url])
+  },[url, products])
 
   // we need to return something when we pass something as a custom hook
 
