@@ -13,7 +13,7 @@ const UseEffectFetchData = () => {
      .then((data)=>setUsers(data)); 
     //  setting the data obtained to the user information with the help of the method
    
-   },[]) //empty array to prevent infinte fetch
+   },[]) //empty array dependency to prevent infinte fetch
 
 
    return <><h1> The list of GitHub Users</h1><ul className="users">  {
